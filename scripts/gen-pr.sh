@@ -24,6 +24,6 @@ git add "${path}"
 git commit -m "add ${filename}"
 git push
 
-gh pr create --title "Add ${filename}" --body "Test PR. Not a real thing."
+gh pr create --title "Add ${filename}" --body "Test PR. Not a real thing." --base origin/main --head ${filename}
 
 git checkout main
