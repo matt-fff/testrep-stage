@@ -22,8 +22,7 @@ git checkout -b ${filename}
 echo "AHHH" >> "${path}"
 git add "${path}"
 git commit -m "add ${filename}"
-git push
-
-gh pr create --title "Add ${filename}" --body "Test PR. Not a real thing." --base origin/main --head ${filename}
+git push -f
+gh pr create --title "Add ${filename}" --body "Test PR. Not a real thing."
 
 git checkout main
