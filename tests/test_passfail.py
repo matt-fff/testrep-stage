@@ -10,9 +10,9 @@ def test_passfail():
     assert len(files) > 0, "No files found in the ./passfail/ directory"
 
     # Find the most recent file
-    most_recent_file = max(files, key=os.path.getctime)
+    most_recent_file = max(files, key=os.path.basename)
 
     with open(most_recent_file, "r") as fp:
         lines = fp.readlines()
         assert len(lines) > 0
-        assert lines[0].startswith("pass")
+        assert lines[0][:4] == "pass"
