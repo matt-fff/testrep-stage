@@ -21,3 +21,4 @@ path="./passfail/${filename}"
 
 echo "${param}" > "${path}"
 
+echo "${filename}"

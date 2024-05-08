@@ -22,7 +22,7 @@ fi
 
 git checkout main
 
-source ./scripts/gen-passfail-file.sh "${param}"
+filename=$(./scripts/gen-passfail-file.sh "${param}")
 
 git checkout -b "${param}/${filename}"
 git add "${path}"
