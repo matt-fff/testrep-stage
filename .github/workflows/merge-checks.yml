@@ -30,10 +30,10 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements-dev.lock ]; then pip install -r requirements-dev.lock; fi
 
-      - name: Unit Tests
-        run: |
-          pytest
-
       - name: Sleep for 1 minute
         run: sleep 60s
         shell: bash
+
+      - name: Unit Tests
+        run: |
+          pytest
