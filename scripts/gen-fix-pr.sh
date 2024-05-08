@@ -19,7 +19,7 @@ rand=$((RANDOM % 100000))
 filename="changes.${rand}"
 path="./arbitrary/${filename}"
 testpath="./tests/test_range_pfd.py"
-fixtemplate="./templates/test_range_pfd_fix.py"
+fixtemplate="./templates/range_pfd_fix.py"
 
 
 git checkout -b "fix/${filename}"
