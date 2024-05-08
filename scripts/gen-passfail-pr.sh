@@ -20,11 +20,20 @@ else
   param=$1
 fi
 
+if [[ "${param}" != "pass" && "${param}" != "fail" ]]; then
+    echo "Error: Invalid value '${param}'. The param must be either 'pass' or 'fail'."
+    exit 1
+fi
+
 git checkout main
 
-filename=$(./scripts/gen-passfail-file.sh "${param}")
+time=$(date +%Y-%m-%dT%H:%M:%S)
+filename="file_${time}.txt"
+path="./passfail/${filename}"
 
-git checkout -b "${param}/${filename}"
+echo "${param}" > "${path}"
+
+git checkout -b "${param}/${time}"
 git add "${path}"
 
 git commit -m "add ${param}"
