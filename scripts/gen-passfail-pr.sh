@@ -20,10 +20,9 @@ else
   param=$1
 fi
 
-
 git checkout main
 
-source ./scripts/genpassfail-file.sh "${param}"
+source ./scripts/gen-passfail-file.sh "${param}"
 
 git checkout -b "${param}/${filename}"
 git add "${path}"

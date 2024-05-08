@@ -12,7 +12,7 @@ fi
 
 
 if [[ "${param}" != "pass" && "${param}" != "fail" ]]; then
-    echo "Error: Invalid value. The param must be either 'pass' or 'fail'."
+    echo "Error: Invalid value '${param}'. The param must be either 'pass' or 'fail'."
     exit 1
 fi
 
