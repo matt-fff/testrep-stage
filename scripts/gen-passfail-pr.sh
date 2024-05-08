@@ -28,12 +28,13 @@ fi
 git checkout main
 
 time=$(date +%Y-%m-%dT%H:%M:%S)
-filename="file_${time}.txt"
+rand=$((RANDOM % 100000))
+filename="file_${time}_${rand}.txt"
 path="./passfail/${filename}"
 
 echo "${param}" > "${path}"
 
-git checkout -b "${param}/${time}"
+git checkout -b "${param}/${rand}"
 git add "${path}"
 
 git commit -m "add ${param}"
