@@ -41,6 +41,8 @@ jobs:
         # Run this step even if the test step ahead fails
         if: "!cancelled()"
         uses: trunk-io/analytics-uploader@main
+        env:
+          TRUNK_PUBLIC_API_ADDRESS: https://api.trunk-staging.io
         with:
           # Path to your test results.
           junit-paths: .test_output/**/*_test.xml
